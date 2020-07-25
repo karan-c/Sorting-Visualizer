@@ -50,7 +50,7 @@ function App() {
     useEffect ( () => {
       const arr =  []
       for (let i = 0; i <180; i++){
-        arr.push(randomNumber(5,610))
+        arr.push(randomNumber(5,600))
         setArray(arr)
       }
     }, [] )
