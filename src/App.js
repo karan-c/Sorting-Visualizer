@@ -34,8 +34,8 @@ function App() {
     const changeArray = (event) => {
     //event.preventDefault()
     const arr =  []
-    for (let i = 0; i <180; i++){
-      arr.push(randomNumber(5,610))
+    for (let i = 0; i <170; i++){
+      arr.push(randomNumber(5,570))
     }
     const ArrayBar = document.getElementsByClassName("bar")
     if(ArrayBar.length > 0){
@@ -50,7 +50,7 @@ function App() {
     useEffect ( () => {
       const arr =  []
       for (let i = 0; i <180; i++){
-        arr.push(randomNumber(5,600))
+        arr.push(randomNumber(5,560))
         setArray(arr)
       }
     }, [] )
