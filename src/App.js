@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import './App.css';
 import BubbleSortSequence from "./sortingAlgos/bubblesort";
 import InsertionSortSequence from "./sortingAlgos/insertionSort"
 import QuickSortSequence from './sortingAlgos/quickSort';
@@ -35,7 +34,7 @@ function App() {
     //event.preventDefault()
     const arr =  []
     for (let i = 0; i <170; i++){
-      arr.push(randomNumber(5,570))
+      arr.push(randomNumber(5,565))
     }
     const ArrayBar = document.getElementsByClassName("bar")
     if(ArrayBar.length > 0){
@@ -50,7 +49,7 @@ function App() {
     useEffect ( () => {
       const arr =  []
       for (let i = 0; i <180; i++){
-        arr.push(randomNumber(5,560))
+        arr.push(randomNumber(5,550))
         setArray(arr)
       }
     }, [] )
