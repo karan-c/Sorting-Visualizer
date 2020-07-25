@@ -22,28 +22,27 @@ body {
 .header {
   display: flex;
   justify-content: center;
-  height:100px;
   align-items: center;
+  height:130px;
   background-color: darkslateblue;
   margin:0px auto;
-  padding: 20px;
+  padding: 7px;
 }
 
 
 .button {
-  background-color: white; /* Green */
-  border: none;
+  position: relative;
+  background-color: white; 
   color:black;
   padding: 20px;
   display: inline-block;
   font-size: 16px;
-  margin: 20px;
-  transition-duration: 0.4s;
+  margin: 30px 15px;
+  transition-duration: 0.2s;
   cursor: pointer;
   border: 3px solid #4CAF50;
   border-radius: 10px;
   outline: none;
-  
 }
 
 .button:hover {
@@ -53,5 +52,26 @@ body {
 .button:disabled {
   opacity: 0.6;
   cursor: not-allowed;
+}
+
+.sliderBlock {
+  background-color: ghostwhite;
+  align-items: center;
+  height: 60px;
+  color:black;
+  padding: 0px;
+  display: inline-block;
+  font-size: 16px;
+  margin: 15px;
+  border: 3px solid #4CAF50;
+  border-radius: 10px;
+}
+
+p{
+  font-family: Arial, Helvetica, sans-serif;  
+  margin: 7px 10px;
+}
+input {
+  margin: 0px 5px 10px 10px;
 }
 

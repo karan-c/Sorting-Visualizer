@@ -8,33 +8,36 @@ function randomNumber(min, max) {
   return Math.floor(Math.random() * (max - min) + min); 
 }
 
-const SequenceSpeed = 3
 const color1 = "darkcyan"
 const color2 = "red"
 function disableAll() {
   
     const buttons = document.getElementsByClassName("button")
     for( let i =0 ; i < buttons.length; i++) {
-    buttons[i].disabled=true;
-}
+      buttons[i].disabled=true
+    }
+    const slider = document.getElementsByTagName("input")
+    slider.disabled = true
 }
 
 function enableAll() {
   const buttons = document.getElementsByClassName("button")
   console.log(buttons)
   for( let i =0 ; i < buttons.length; i++) {
-    buttons[i].disabled=false;;
+    buttons[i].disabled=false 
   }
+  const slider = document.getElementsByTagName("input")
+  slider.disabled = false 
 }
 function App() {
   
   const [array, setArray] = useState([])
-
+  const [SequenceSpeed, setSequenceSpeed] = useState(3)
     const changeArray = (event) => {
     //event.preventDefault()
     const arr =  []
     for (let i = 0; i <170; i++){
-      arr.push(randomNumber(5,565))
+      arr.push(randomNumber(5,550))
     }
     const ArrayBar = document.getElementsByClassName("bar")
     if(ArrayBar.length > 0){
@@ -48,12 +51,15 @@ function App() {
     }
     useEffect ( () => {
       const arr =  []
-      for (let i = 0; i <180; i++){
+      for (let i = 0; i <170; i++){
         arr.push(randomNumber(5,550))
         setArray(arr)
       }
     }, [] )
   
+    const slider = async (e) => {
+      setSequenceSpeed(10 - e.target.value +1)
+    }
     const insertionMergeSort  = async (e) => {
       
       disableAll()
@@ -142,18 +148,21 @@ function App() {
     
   return (
     <div>
-    <div className="header"><b>
+    <div className="header">
       <button className="button" onClick={changeArray}>Change Array </button>
       <button className="button" onClick={quickAndBubbleSort} name = "quicksort">Quick Sort</button>
       <button className="button" onClick={insertionMergeSort} name = "mergesort">Merge Sort</button>
       <button className="button" onClick={insertionMergeSort} name = "insertionsort">Insertion Sort</button>
       <button className="button" onClick={quickAndBubbleSort} name = "bubblesort">Bubble Sort</button>
-      </b>
+      <div className="sliderBlock">
+        <p>Speed:</p>
+        <input type="range" min="1" max="10" onChange={slider}></input>
+      </div>
     </div>
-    <div className="playArea">
-      
+    
+    <div className="playArea"> 
     {
-    array.map( (h, idx) => (<div className="bar" key = {idx} style={{height: h, backgroundColor: color1}}></div>)) 
+      array.map( (h, idx) => (<div className="bar" key = {idx} style={{height: h, backgroundColor: color1}}></div>)) 
     }
     </div>
     </div>
