@@ -1,6 +1,6 @@
 
 [ https://sorting-visualizer-karan.netlify.app/ ]
-
+------------------------
 Use Desktop-Site for better experience.
 ----------------------------------------------------------------------------
 
