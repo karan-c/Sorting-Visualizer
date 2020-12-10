@@ -3,6 +3,7 @@ import BubbleSortSequence from "./sortingAlgos/bubblesort";
 import InsertionSortSequence from "./sortingAlgos/insertionSort"
 import QuickSortSequence from './sortingAlgos/quickSort';
 import MergeSortSequence from './sortingAlgos/mergeSort';
+import './App.css';
 
 function randomNumber(min, max) {  
   return Math.floor(Math.random() * (max - min) + min); 
@@ -33,7 +34,7 @@ function App() {
   
   const [array, setArray] = useState([])
   const [SequenceSpeed, setSequenceSpeed] = useState(3)
-    const changeArray = (event) => {
+  const changeArray = (event) => {
     //event.preventDefault()
     const arr =  []
     for (let i = 0; i <170; i++){
@@ -48,10 +49,11 @@ function App() {
       }
     }
     setArray(arr)
-    }
+  }
+
     useEffect ( () => {
       const arr =  []
-      for (let i = 0; i <170; i++){
+      for (let i = 0; i < 170; i++){
         arr.push(randomNumber(5,550))
         setArray(arr)
       }
